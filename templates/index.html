@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">	
+
+    <title>Camera View</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+			<h1 class="mt-5">Camera View - 1716 Driver Station <img src="{{ url_for('static', filename='images/plain-robot.svg') }}" id="logo"></h1>
+            <img id="cam" src="{{ url_for('video_feed') }}" width="100%">	 
+		</div>	
+	</div>
+
+	<div id="buttons">
+		<button onclick="window.location.href='/next'">Previous Camera</button>	 		
+		<button onclick="window.location.href='/prev'">Next Camera</button>
+		<br>
+		<button onclick="window.location.href='/toggle_april_tag'">Toggle April Tags</button>
+		<button onclick="window.location.href='/toggle_color_detection'">Toggle Color Detection</button>
+		<button onclick="window.location.href='/capture_color'">Capture Color</button>
+
+	<!--<img id="all_cams" src="{{ url_for('all') }}" width="100%">-->
+		<br>
+		<button onclick="window.location.href='/goto_allcam'">View All Cameras</button>		
+		<button onclick="window.location.href='/goto_sidecam'">View Side Cameras</button>	
+	</div>	
+</div>
+</body>
+</html>

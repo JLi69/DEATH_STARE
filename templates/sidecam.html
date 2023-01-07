@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">	
+
+    <title>Camera View</title>
+</head>
+<body>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+<script>
+	
+	socket = io();
+	socket.binaryType = "arraybuffer";
+	socket.connect("http://127.0.0.1:5000/sidecam")
+	
+	socket.on("connect", function() {
+			console.log("connected!\n");
+			socket.send("a");
+		})
+	socket.on("message", function(msg) {
+			//document.getElementsByClassName("side")[0].src = msg; 
+			console.log(msg);
+			socket.send("a");	
+		})
+</script>
+-->
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+			<h1 class="mt-5">Side Cameras <img src="{{ url_for('static', filename='images/plain-robot.svg') }}" id="logo"></h1>
+		
+			<div class="sidediv">
+				<img class="side side1cam" width="100%" src="{{ url_for('side1') }}">
+			<div>	
+
+			<br>
+			<div class="sidediv">
+				<img class="side side2cam" width="100%" src="{{ url_for('side2') }}">
+				<img class="side" id="robot" src="{{ url_for('static', filename='images/robot.jpg') }}" width="100%">		
+				<img class="side side3cam" width="100%" src="{{ url_for('side3') }}">	
+			</div>
+
+			<br>
+			<div class="sidediv">
+				<img class="side side4cam" width="100%" src="{{ url_for('side4') }}">
+			</div>
+
+		</div>	
+	</div>
+
+	<div id="buttons">
+		<button onclick="window.location.href='/goback'">Return To Main Camera</button>	
+	</div>	
+</div>
+</body>
+</html>
